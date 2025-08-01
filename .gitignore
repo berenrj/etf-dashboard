@@ -1,0 +1,10 @@
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+
+# Ignore Streamlit secrets
+.streamlit/secrets.toml
+
+# OS files
+.DS_Store
+Thumbs.db
