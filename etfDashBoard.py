@@ -115,7 +115,7 @@ api_key = st.secrets["openfigi_api_key"]
 
 # --- Initialise ETF input state if not set ---
 if "etf_input_val" not in st.session_state:
-    st.session_state.etf_input_val = "SGLS.L,CSH2.L,PHPP.L,ARMG.L,DAPP.L,BKCN.L,ARCI.L,CYBP.L,XAIX.L,NATP.L,DFNX.L,ESGB.L,WEBP.L,ARKK"
+    st.session_state.etf_input_val = "SGLS.L,CSH2.L,PHPP.L,ARMG.L,DAPP.L,BKCN.L,ARCI.L,CYBP.L,XAIX.L,NATP.L,DFNX.L,ESGB.L,WEBP.L,ARKK,ESIN.L,TECW.L,SBEG.L,WINC.L,SDIP.L"
 
 # XAIX.L,GBSP.L,BLKC.L,
 
@@ -128,7 +128,7 @@ yf_suffix_mapping = {
     'ASE': '',     # AMEX
     'BATS': '',    # Cboe BATS
 
-    'LSE': 'L',    # London Stock Exchange
+    'LSE': 'L',    # London Stock try
     'LN': 'L',     # London Stock Exchange
     'I2': 'L',     # LSE IOB (International Order Book)
     
@@ -383,7 +383,7 @@ if etf_list:
         names = fetch_names(etf_list)
 
     if invalid:
-        st.warning(f"⚠️ These tickers had issues: {', '.join(invalid)}. Try manually looking up or removing any suffix from the ticker.")
+        st.warning(f"⚠️ These tickers had issues: {', '.join(invalid)}. Try manually looking up or adding/removing '.L' suffix from the ticker.")
 
     if not price_data.empty:
         cols = st.columns(4)
